@@ -1,0 +1,17 @@
+<ion-view view-title="TAREAS ACTIVAS">
+  <ion-content class="padding">
+    <ion-list show-delete="true">
+	<ion-item ng-repeat="tarea in tareas">
+	   <ion-delete-button class="ion-minus-circled" ng-click="borrar($index)"></ion-delete-button>
+	   {{tarea.texto}}
+	  </ion-item>
+	</ion-list>
+
+	<div class="padding">
+	  <label class="item item-input">
+	    <input type="text" placeholder="Tarea" ng-model="tarea.text">
+	  </label>
+		<button class="button button-full button-positive" ng-click="agregar()" ng-disabled="!tarea.text">Agregar</button>
+	</div>
+  </ion-content>
+</ion-view>
